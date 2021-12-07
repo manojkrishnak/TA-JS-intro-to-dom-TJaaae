@@ -10,7 +10,7 @@ document.body.children[5].children[0].innerText = "all about document"
 //    - Select the input element with name `email`
 document.body.children[6].children[2]
 // 3. Log the number (using console.log) of children of all the `li` element inside the ul with class `topics`
-console.log(document.body.children[5].childElementCount);  
+console.log(document.body.children[5].children.length);  
 // 4. Select the first input using the `type` selector and store them in variable named `emailInput`
 let emailInput = document.querySelectorAll("input")[0];
 
@@ -36,7 +36,7 @@ allTopics.forEach(function(cv){
 // 13. Select all the elements with class `list` and store in variable `listOfSelectedTopics`
 let listOfSelectedTopics = document.getElementsByClassName("list")
 // 14. Select the first li element inside the `ul` element using `>` (direct child) and store in `firstLi`
-let firstLi = document.querySelector("ul").children[0];
+let firstLi = document.querySelector("ul>li");
 // 15. Select all the img element and log the number of element saying `The total number of img element is ---`
 console.log(`The total number of img element is ${document.querySelectorAll("img").length}`)
 // 16. Select all the `p` element and store in `allPElement`
