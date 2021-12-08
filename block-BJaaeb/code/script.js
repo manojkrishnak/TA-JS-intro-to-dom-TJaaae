@@ -80,8 +80,8 @@ function createTodoList(arr){
       input.setAttribute("name", "");
       input.setAttribute("id", "");
       span.innerText = "X";
-      li.appendChild(p)
-      li.appendChild(input)
+      li.appendChild(p);
+      li.appendChild(input);
       li.appendChild(span);
       ul.appendChild(li)
   });
