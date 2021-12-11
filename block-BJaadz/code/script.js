@@ -45,7 +45,11 @@ let para = document.createElement("p");
 para.innerText = "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure."
 
 // Remove all the elements from box 1
-let boxOne = document.getElementsByClassName("one");
+let boxOne = document.querySelector(".one");
+// boxOne.forEach(function(el){
+//   el.remove();
+//   // console.log(">>",el)
+// })
 // boxOne.removeChild(boxOne.children[0])
 // boxOne.removeChild(boxOne.children[1])
 // Replace all the elements inside box 1 with the para (you created above)
@@ -100,13 +104,17 @@ let p2 = document.createElement("p");
 p2.innerText = "Prepend inserts as first child";
 // hr[0].insertBefore(p2, hr[0])
 // Change the border of box 4 to '1px solid black'
-
+let box4 = document.querySelector(".four");
+box4.style.border = "1px solid black";
 // Change the border radius of box 5 to 10px.
-
+let box5 = document.querySelector(".five");
+box5.style.borderRadius = "10px";
 // Change the text color of box 6 to black.
-
+let box6 = document.querySelector(".six");
+box6.style.color = "black";
 // Change the font size of the para inside box 1 to 0.8rem.
-
+let box1 = document.querySelector(".one");
+box1.style.color = "black";
 // Change the background of all the alternate boxes (1, 3, 5, ....) to aliceblue
 
 // add a class named "awesome-box" to the box 6 using classList property of DOM element.
