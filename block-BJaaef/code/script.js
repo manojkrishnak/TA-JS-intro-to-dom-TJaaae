@@ -26,6 +26,7 @@ for(let i = 0; i<got.houses.length; i++){
         a.href = got.houses[i].people[j].wikiLink;
         a.innerText = "Learn More!";
         a.className = "learn-more-btn";
+        a.setAttribute("target", "_blank");
 
         let div = document.createElement("div");
         div.append(divOne, p, a);
@@ -36,3 +37,19 @@ for(let i = 0; i<got.houses.length; i++){
         allPeople.append(div);
     }
 }
+
+
+// Approach - instructor
+
+let parent = document.querySelector("all-people");
+
+let allPeopleInstructor = got.houses.reduce((acc, cv) => {
+    acc = acc.concat(cv.people);
+    return acc;
+}, [])
+
+let cardsHtml = allPeopleInstructor.map(person => {
+    return `return li elemnt with a sample dynamic structure in it`;
+})
+
+// parent.innerHTML = cardsHtml.join("");
