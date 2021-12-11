@@ -1,7 +1,8 @@
 
-data.books.forEach(function(book){
+allBooks.books.forEach(function(book){
     let img = document.createElement("img");
     img.src =  book.image;
+    img.alt = book.title;
 
     let imgDiv = document.createElement("div");
     imgDiv.append(img);
@@ -17,6 +18,7 @@ data.books.forEach(function(book){
 
     let btn = document.createElement("a");
     btn.innerText = "Buy Now";
+    btn.href = book.website
     btn.className = "btn";
 
     let div = document.createElement("div");
