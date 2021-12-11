@@ -81,10 +81,24 @@ console.log(box16[0].lastElementChild)
 // Select box 2 and append a new paragraph element with content "Append inserts as last child" just after hr element.
 let box2 = document.querySelector(".two");
 let p = document.createElement("p")
-p.innerText()
-box2.append(p);
+p.innerText = "Append >>>>>>>>>>>>>>>>>>>>>>> inserts as last child";
+// box2.append(p);
 // Select box 3 and prepend a new paragraph element with content "Prepend inserts as first child" just before hr element.
+let box3 = document.querySelector(".three");
+let firstHr = box3.children;
+firstHr[0].prepend(p)
+// box3.append(p)
+console.log(">>>",firstHr)
+// const elem = document.createElement('p');
 
+// // add text
+// elem.innerText = 'Personal Details';
+// let box3All = document.querySelector(".two");
+// let hr = box3.childre
+// box3All.before(elem);
+let p2 = document.createElement("p");
+p2.innerText = "Prepend inserts as first child";
+// hr[0].insertBefore(p2, hr[0])
 // Change the border of box 4 to '1px solid black'
 
 // Change the border radius of box 5 to 10px.
