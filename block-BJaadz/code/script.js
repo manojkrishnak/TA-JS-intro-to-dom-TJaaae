@@ -32,12 +32,13 @@ heading.style.textAlign = "center";
 heading.style.fontSize = "3rem";
 
 // Change the border of hr with class 'image' to `2px solid purple`.
-document.querySelector(".image").style.border = `2px solid purple`;
+
+document.querySelectorAll(".image").forEach((el)=> el.style.border = `2px solid purple`);
 // Hide the box number 17 (last box).
 let seventeenthBox = document.querySelector(".seventeen");
 seventeenthBox.style.display = "none";
 // Change the border of all the hr element from solid to dashed type
-allHrsArray.map(cv => cv.style.borderStyle = "dashed");
+allHrsArray.forEach(cv => cv.style.borderStyle = "dashed");
 
 // Create a pragraph element and store it in variable named 'para' using `createElement`
 let para = document.createElement("p");
@@ -46,7 +47,8 @@ para.innerText = "querySelector returns an element you can maupulate but querySe
 
 // Remove all the elements from box 1
 let boxOne = document.querySelector(".one");
-while(boxOne.firstChild){ boxOne.firstChild.remove(); }
+while(boxOne.firstChild){ boxOne.firstChild.remove(); } //or
+//boxOne.innerHTML = "";
 
 // Replace all the elements inside box 1 with the para (you created above)
 boxOne.append(para);
@@ -80,26 +82,17 @@ console.log(box16[0].firstElementChild)
 console.log(box16[0].lastElementChild)
 // Select box 2 and append a new paragraph element with content "Append inserts as last child" just after hr element.
 let box2 = document.querySelector(".two");
-let p = document.createElement("p")
-p.innerText = "Append >>>>>>>>>>>>>>>>>>>>>>> inserts as last child";
-box2.insertAdjacentHTML("afterend", p);
+let p1 = document.createElement("p")
+let text1 = document.createTextNode("Append >>>>>>>>>>>>>>>>>>>>>>> inserts as last child");
+p1.append(text1);
+box2.append(p1);
 // TODO ----------------------------------------------------------------
 // Select box 3 and prepend a new paragraph element with content "Prepend inserts as first child" just before hr element.
 let box3 = document.querySelector(".three");
-let firstHr = box3.children;
-firstHr[0].prepend(p)
-// box3.append(p)
-console.log(">>>",firstHr)
-// const elem = document.createElement('p');
-
-// // add text
-// elem.innerText = 'Personal Details';
-// let box3All = document.querySelector(".two");
-// let hr = box3.childre
-// box3All.before(elem);
 let p2 = document.createElement("p");
 p2.innerText = "Prepend inserts as first child";
-// hr[0].insertBefore(p2, hr[0])
+box3.prepend(p2);
+
 // Change the border of box 4 to '1px solid black'
 let box4 = document.querySelector(".four");
 box4.style.border = "1px solid black";
@@ -110,27 +103,24 @@ box5.style.borderRadius = "10px";
 let box6 = document.querySelector(".six");
 box6.style.color = "black";
 // Change the font size of the para inside box 1 to 0.8rem.
-let box1 = document.querySelector(".one");
+para.style.fontSize = "0.8rem"
 // box1.style.fontSize = "black";
 // Change the background of all the alternate boxes (1, 3, 5, ....) to aliceblue
-let archive = document.getElementsByClassName("archive");
-archive[0].childNodes.forEach(function(v, i) {
-  console.log(v, i)
-  if( i%2 === 0){
-    let elm = document.getElementsByClassName("box")[i];
-    console.log("<<<",elm)
-    elm.style.backgroundColor = "red";
+let allBoxes = document.querySelectorAll(".box");
+allBoxes.forEach(function(elm, i) {
+  if( (i+1)%2 !== 0){
+    elm.style.backgroundColor = "aliceblue";
   }
-  
 })
 // add a class named "awesome-box" to the box 6 using classList property of DOM element.
 box6.classList.add("awesome-box")
 // Using the toggle classList property toggle the class `awesome-box` from box 2
+box4.classList.toggle("awesome-box")
 
 // Using the remove classList proeprty remove the class `awesome-box` from box 4
 box4.classList.remove("awesome-box")
 // Change the background of the body to bisque
-box4.style.backgroundColor = "bisque";
+document.body.style.backgroundColor = "bisque";
 // Create a button and store it in a variable named 'btn'
 let btn = document.createElement("button");
 // textContent of the button should be 'Click Me'
@@ -156,7 +146,8 @@ imgElm.src = `https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_1280.j
 // Select the box 7 using class seven
 let box7 = document.getElementsByClassName("seven")[0];
 // Remove all the elements form box seven
-while(box7.lastElementChild) { box7.lastElementChild.remove()}
+while(box7.lastElementChild) { box7.lastElementChild.remove()} //or
+// box7.innerHTML ="";
 // Append the imgElm to the box no 7
 box7.append(imgElm)
 // Change the width and height of the image to `100%`
